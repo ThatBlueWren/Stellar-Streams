@@ -1,0 +1,14 @@
+What is the difference between a globular cluster and a dwarf galaxy?
+
+A dwarf galaxy:
+- "the smallest gravitationally bound systems in which galaxy formation can occur"
+- shallow gravitational wells, high dark matter fractions, relatively simple baryonic structure
+https://iopscience.iop.org/article/10.1088/1674-4527/ae715f/pdf
+
+A globular cluster:
+- a type of star cluster, characterised by its lack of dark matter and low mass-to-light ratios
+https://ui.adsabs.harvard.edu/abs/2025MNRAS.539.2485D/abstract
+
+The differences:
+- Dwarf galaxies are categorised by their dark matter levels, which are at a similar ratio regular galaxies (source?)
+- Globular clusters have a lack of dark matter comparitavely, resulting in lower mass-to-light ratios
