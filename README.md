@@ -7,3 +7,15 @@ https://ui.adsabs.harvard.edu/abs/2026arXiv260302445V/abstract
 
 The Phoenix stellar stream rose from the ashes of an ancient star cluster
 https://ui.adsabs.harvard.edu/abs/2020Natur.583..687K/abstract
+
+
+# Data Sources:
+Wide data sources:
+- Gaia
+- Desi Survey
+- GALAH
+- APOGEE
+
+Focused Data Surveys:
+- Individual papers
+- can be found through VizieR
