@@ -8,19 +8,26 @@ import astropy
 from astropy.io import fits
 
 ## To-Do:
-# Clean data (good_star_pb, remove duplicates by only keeping primary=true, keep priority=7-9, keep only the fields with 'phoenix' in them)
 # compare collected stars in the selected fields with existing lists 
 
-hdul = fits.open('Data/s5_pdr1.fits')
-data = hdul[1].data
-mask_good = data['good_star_pb'] > 0.5  # research good cutoff number
-mask_primary = data['primary']
+## Cleaning the data
+hdul = fits.open('Data/s5_pdr1.fits')   # Opens the fits file
+data = hdul[1].data                     # selects the right dataframe
+mask_good = data['good_star_pb'] > 0.5  # keeps only stars above a certain quality as defined by the creators (research good cutoff number)
+mask_primary = data['primary']          # keeps only 'original' stars, removing repeat data
+mask_priority = data['priority'] >= 7   # keeps only stars deemed to be part of stellar streams (values 7-9)
 
-good_star = hdul[1].data[mask_good & mask_primary]
+good_star = data[mask_good & mask_primary & mask_priority]  # adds the masks to the data
 
-print(len(data), mask_good.sum(), mask_primary.sum(), len(good_star))
+mask_phoenix = np.char.find(good_star['field'].astype(str), 'Phoenix') >= 0  # keeps only the stars within the Phoenix fields (fields with the phoenix name)
 
-#plt.hist(good_star['feh50'], bins=20)
-#plt.show()
+good_phoenix_stars = good_star[mask_phoenix]  # adds the phoenix mask to the data
 
-hdul.close()
+# Checking that the masks have been applied
+#print(len(data), mask_good.sum(), mask_primary.sum(), mask_priority.sum(), mask_phoenix.sum(), len(good_phoenix_stars))  # checks that each mask is working (should contain less entries than the untouched data)
+
+df = pd.DataFrame(good_phoenix_stars.tolist(), columns=good_phoenix_stars.columns.names)  # saving cleaned data to dataframe
+df.to_csv('Cleaned Data/s5_phoenix_stars.csv', index=False)  # saving cleaned data to file
+
+hdul.close()  #closes the fits file
+
