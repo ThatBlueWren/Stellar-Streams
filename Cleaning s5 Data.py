@@ -15,7 +15,7 @@ hdul = fits.open('Data/s5_pdr1.fits')   # Opens the fits file
 data = hdul[1].data                     # selects the right dataframe
 mask_good = data['good_star_pb'] > 0.5  # keeps only stars above a certain quality as defined by the creators (research good cutoff number)
 mask_primary = data['primary']          # keeps only 'original' stars, removing repeat data
-mask_priority = data['priority'] >= 7   # keeps only stars deemed to be part of stellar streams (values 7-9)
+mask_priority = data['priority'] >= 9   # keeps only stars deemed to be part of stellar streams (values 7-9)
 
 good_star = data[mask_good & mask_primary & mask_priority]  # adds the masks to the data
 
