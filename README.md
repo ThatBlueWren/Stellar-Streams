@@ -2,6 +2,8 @@
 Determining the origins of the Phoenix and C-19 Stellar Streams
 - finding metallicity and radial velocity values
     - globular clusters tend to have lower velocity dispursions (according to tutor, find source)
+- finding metallicity dispursion and velocity dispursion
+- 
 
 # Key Papers:
 The primordial nature of the C-19 stellar stream

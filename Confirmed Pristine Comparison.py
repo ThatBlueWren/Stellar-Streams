@@ -1,13 +1,6 @@
 # anomalies in the radial veleocity could be explained by unconfirmed candidates?
 # --> turns out no, the outliers are almost exclusively confirmed candidates!
 import pandas as pd
-
-# Cleaning data to keep only confirmed members
-df = pd.read_csv('Cleaned Data/pristine_c19_stars.csv')
-mask = df['Membership'] == 'Y'
-Cleaned_df = df[mask]
-#Cleaned_df.to_csv('Cleaned Data/pristine_c19_confirmed.csv')
-
 import matplotlib.pyplot as plt
 import numpy as np
 
