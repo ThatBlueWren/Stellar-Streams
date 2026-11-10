@@ -20,4 +20,5 @@ cleaned_df.to_csv("Cleaned Data/pristine_c19_stars.csv") # saving data to file
 ## Cleaning data to keep only confirmed members
 mask = cleaned_df['Membership'] == 'Y'
 member_df = cleaned_df[mask]
+
 member_df.to_csv('Cleaned Data/pristine_c19_confirmed.csv')

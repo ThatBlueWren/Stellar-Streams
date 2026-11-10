@@ -1,6 +1,7 @@
 ## Combining the data from the Pristine Surveys XXVII and XVII 
 
 import pandas as pd
+import numpy as np
 
 # reading the data in
 pristine = pd.read_csv("Cleaned Data/pristine_c19_confirmed.csv")
